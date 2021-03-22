@@ -4,7 +4,8 @@ COPY main.go .
 
 
 RUN apk update && apk add --no-cache git
-RUN go get -d -v ./...
+RUN go get github.com/stianeikeland/go-rpio/v4
+RUN go get github.com/imroc/req
 RUN go build main.go
 
 FROM alpine
