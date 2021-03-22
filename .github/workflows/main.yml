@@ -3,6 +3,13 @@ name: ci
 on:
   push:
     branches: main
+    
+  workflow_dispatch:
+    inputs:
+      name:
+        description: '备注'
+        required: true
+        default: 'Mona the Octocat'
 
 jobs:
   main:
