@@ -1,13 +1,10 @@
-FROM golang:alpine AS builder
+FROM golang:alpine
+COPY . ./src
 
-COPY main.go .
+RUN cd ./src && \
+    go build main.go
 
-
-RUN apk update && apk add --no-cache git
-RUN go get github.com/stianeikeland/go-rpio/v4
-RUN go get github.com/imroc/req
-RUN go build main.go
 
 FROM alpine
-COPY --from=0 /go/main .
+COPY --from=0 /go/src/main .
 CMD ["./main"]
