@@ -159,7 +159,7 @@ func main()  {
 			post_param["sensor3"]=data_[3]
 			post_param["sensor4"]=data_[4]
 			post_param["sensor5"]=data_[5]
-			r,_:=req.Post("api_url",req.BodyJSON(post_param))
+			r,_:=req.Post(api_url,req.BodyJSON(post_param))
 			print(r.String())
 		}
 	}()
