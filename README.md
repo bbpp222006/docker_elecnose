@@ -3,5 +3,5 @@
 
 使用方式
 ```
-docker run -e api_url=http://123.456.789/api/write_data --name elecnose -d varitia/docker_elecnose:latest
+docker run -d -e api_url=http://123.456.789/api/write_data --name elecnose  --privileged varitia/docker_elecnose:latest
 ```
