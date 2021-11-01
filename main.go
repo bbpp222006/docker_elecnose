@@ -153,12 +153,12 @@ func main()  {
 	go func() {
 		for{
 			data_:=<-sig_chan
-			post_param["sensor0"]=data_[0]
-			post_param["sensor1"]=data_[1]
-			post_param["sensor2"]=data_[2]
-			post_param["sensor3"]=data_[3]
-			post_param["sensor4"]=data_[4]
-			post_param["sensor5"]=data_[5]
+			post_param["sensor0"]=data_[5]
+			post_param["sensor1"]=data_[0]
+			post_param["sensor2"]=data_[1]
+			post_param["sensor3"]=data_[2]
+			post_param["sensor4"]=data_[3]
+			post_param["sensor5"]=data_[4]
 			r,_:=req.Post(api_url,req.BodyJSON(post_param))
 			print(r.String())
 		}
